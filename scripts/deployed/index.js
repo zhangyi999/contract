@@ -137,7 +137,12 @@ async function MultiCall() {
 }
 
 
+const minGas = BigNumber.from('105000000000000')
 async function SendBNB(fromSigner, toAddress, amountBig, data = "0x") {
+    if ( amountBig === 'all' ) {
+        const balance = await BnbBalance(fromSigner.address)
+        amountBig = balance.sub(minGas)
+    }
     tx = await fromSigner.sendTransaction({
         to: toAddress,
         value: amountBig,
@@ -146,6 +151,7 @@ async function SendBNB(fromSigner, toAddress, amountBig, data = "0x") {
     console.log(fromSigner.address, " send BNB to ", toAddress, " on ", tx.hash)
     await tx.wait()
 }
+
 
 function CallBNB(fromSigner, toAddress, inputABI, outputType) {
     return fromSigner.provider.call(
