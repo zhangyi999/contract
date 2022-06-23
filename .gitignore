@@ -5,11 +5,11 @@ coverage
 coverage.json
 typechain
 
-work.sh
+# work.sh
 #Hardhat files
 cache
 artifacts
-work
+# work
 replenish.js
 
 .openzeppelin
