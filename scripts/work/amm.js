@@ -26,11 +26,13 @@ async function main() {
             const tx = await misAmm.buy()
             console.log(tx.hash)
             await tx.wait()
-            const next = await misAmm.interval()
+            const next = await misAmm.lastBuy()
+            const now = Math.floor(new Date() / 1000)
+            const step = ForBig(next) - now
             console.log(
-                ForBig(next)
+                step
             )
-            run(ForBig(next) * 1000)
+            run(step * 1000)
         }, nextTime)
     }
     
