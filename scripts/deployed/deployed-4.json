@@ -1,0 +1,13 @@
+{
+    "ContractAt" : {
+        "MULTI_CALL": "0x6E25E2E9d89d1Ba697B912599490268Ec0ec0724",
+        "TRIM" : "0x6ca90d82228e65D9bf88947341e3722f7143c365",
+        "ROUTER": "0x10ED43C718714eb63d5aA57B78B54704E256024E",
+        "WETH":"0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c",
+        "FACTORY":"0xca143ce32fe78f1f7019d7d551a6402fc5350c73",
+        "USDT" : "0x55d398326f99059fF775485246999027B3197955"
+    },
+    "Address" : {
+        "USDT": "12312"
+    }
+}
